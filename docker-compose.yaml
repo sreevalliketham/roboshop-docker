@@ -7,34 +7,34 @@ services:
   mongodb:
     image: sreevallik/mongodb:v1
     container_name: mongodb
-  # catalogue:
-  #   image: sreevallik/catalogue:v1
-  #   container_name: catalogue
-  #   depends_on:
-  #   - mongodb
-  # redis:
-  #   image: redis:7.0
-  #   container_name: redis
-  # user:
-  #   image: sreevallik/user:v1
-  #   container_name: user
-  #   depends_on:
-  #   - redis
-  #   - mongodb
-  # cart:
-  #   image: sreevallik/cart:v1
-  #   container_name: cart
-  #   depends_on:
-  #   - catalogue
-  #   - redis
-  # mysql:
-  #   image: sreevallik/mysql:v1
-  #   container_name: mysql
-  # shipping:
-  #   image: sreevallik/shipping:v1
-  #   container_name: shipping
-  #   depends_on:
-  #   - mysql
+  catalogue:
+    image: sreevallik/catalogue:v1
+    container_name: catalogue
+    depends_on:
+    - mongodb
+  redis:
+    image: redis:7.0
+    container_name: redis
+  user:
+    image: sreevallik/user:v1
+    container_name: user
+    depends_on:
+    - redis
+    - mongodb
+  cart:
+    image: sreevallik/cart:v1
+    container_name: cart
+    depends_on:
+    - catalogue
+    - redis
+  mysql:
+    image: sreevallik/mysql:v1
+    container_name: mysql
+  shipping:
+    image: sreevallik/shipping:v1
+    container_name: shipping
+    depends_on:
+    - mysql
   #   - cart
   # rabbitmq:
   #   image: rabbitmq:3
