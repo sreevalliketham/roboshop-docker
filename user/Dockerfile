@@ -8,5 +8,5 @@ ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/users"
 RUN useradd roboshop && \
     chown -R roboshop:roboshop /opt/server
-USER  roboshop
+# USER  roboshop
 CMD ["node","server.js"]
